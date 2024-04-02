@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>大樹電子書包</title>
+    <style>
+        /* 基本重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        /* 導航條 */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #333;
+            color: #fff;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+
+        .navbar a {
+            color: #fff;
+            padding: 10px 15px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover, .navbar a:focus {
+            background-color: #555;
+        }
+
+        /* 主要內容 */
+        .content {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,.1);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background: #eee;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        ul li:hover {
+            background: #ccc;
+        }
+
+        .definition {
+            display: none;
+            font-weight: bold;
+            margin-left: 10px;
+            color: #007BFF; /* 或您喜歡的顏色 */
+        }
+
+        .definition.show {
+            display: inline;
+        }
+
+#backToTop {
+    position: fixed;
+    bottom: 20px; /* 距離底部 20px */
+    right: 30px; /* 距離右側 30px */
+    z-index: 99; /* 確保按鈕在頁面上的其他內容之上 */
+    border: none; /* 去除邊框 */
+    outline: none; /* 去除輪廓 */
+    background-color: #333; /* 按鈕背景顏色 */
+    color: white; /* 文字顏色 */
+    cursor: pointer; /* 鼠標懸停時的光標形狀 */
+    padding: 15px; /* 內邊距 */
+    border-radius: 10px; /* 圓角邊框 */
+}
+
+#backToTop:hover {
+    background-color: #555; /* 鼠標懸停時的背景顏色變化 */
+}
+
+
+/* 對於小於 600px 寬的裝置，調整部分樣式 */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column; /* 將導航項目堆疊為一列 */
+    }
+
+    .content {
+        padding: 10px; /* 減少內邊距 */
+    }
+
+    #backToTop {
+        bottom: 10px; /* 調整回頂部按鈕的位置 */
+        right: 10px;
+    }
+}
+
+/* 對於平板尺寸（600px - 900px 寬）的裝置，調整部分樣式 */
+@media (min-width: 600px) and (max-width: 900px) {
+    .content {
+        max-width: 100%; /* 內容寬度調整為 100% */
+    }
+}
+
+/* 對於寬於 900px 的裝置，使用默認樣式或進行必要的調整 */
+
+
+.expanded {
+    background-color: #f4f7db; /* 設定您喜歡的顏色 */
+    color: #333; /* 設定文字顏色 */
+    /* 可以添加更多樣式 */
+}
+
+    </style>
+</head>
+<body>
+<button id="backToTop" title="回到頂部" style="display: none;">↑ Back to Top</button>
+
+<div class="navbar">
+    <a href="#home">電子書包</a>
+    <a href="#basicA">英語單字庫</a>
+    <a href="#basicB">國語詞語庫</a>
+    <a href="#basicC">數學筆記庫</a>
+    <a href="#CL">程式語言庫</a>
+</div>
+
+<div class="content" id="home">
+    <h1>歡迎參觀大樹的電子書包</h1>
+    <p>這裡記錄了我的學習歷程！</p>
+    <p><b>註</b>：請<b><u>點擊</u></b>筆記名稱展開或隱藏。</p>
+</div>
+
+<div class="content" id="basicA">
+    <h1>英語單字庫</h1>
+
+    <ul>
+        <li>
+            <span class="note-title"><h3>學習筆記A（2024.03.28）</h3></span>
+            <pre style="display: none;">
+descriptive
+inferential
+numerical
+graphical
+tabular
+experiment
+individuals
+branches
+distributions
+dispersion
+quartiles
+interquartile range
+variance
+standard deviation
+3M mean median mode
+arithmetic average
+central tendency
+symmetric distribution
+skewed distribution
+pros and cons
+Rule of Thumb
+heterogeneity
+deriving
+procedures
+agglomerative
+divisive
+significant
+semicolon
+            </pre>
+        </li>
+
+        <li>
+            <span class="note-title"><h3>學習筆記B（2024.04.01）</h3></span>
+            <pre style="display: none;">
+detecting
+illustration
+causal
+inference
+classification
+technique
+exploratory
+canonical
+conjoint
+perceptual mapping
+correspondence
+interpretation
+establish
+strive
+separation
+assess
+flowchart
+remaining
+interdependence
+beyond
+preliminary
+profiling
+univariate
+bivariate
+multivariate
+identifying
+remedies
+diagnosis
+contexts
+classifying
+illustrative
+normality
+homoscedasticity
+linearity
+            </pre>
+        </li>
+
+        <!-- 其他筆記 -->
+    </ul>
+</div>
+
+
+<div class="content" id="basicB">
+    <h1>國語詞語庫</h1>
+    <ul>
+        <li>
+            <span class="note-title"><h3>學習筆記A（2024.04.01）</h3></span>
+            <pre style="display: none;">
+正廳、客廳、飯廳。
+酒盞、茶盞、把盞言歡。
+闔眼、開闔。
+籤：作為標示用的小紙條。
+入場券：進入某場所時，持有許可進入的票券。
+[例]今晚職棒賽的入場券，一票難求。
+            </pre>
+        </li>
+
+        <li>
+            <span class="note-title"><h3>學習筆記B（2024.04.02）</h3></span>
+            <pre style="display: none;">
+鍋碗瓢盆：廚房用具的通稱。
+途中：路上，路途之間。
+鑑賞：鑑定賞玩。
+七彩繽紛：形容色彩繁多，華麗耀眼。
+            </pre>
+        </li>
+
+        <!-- 其他筆記 -->
+    </ul>
+</div>
+
+
+
+
+<div class="content" id="basicC">
+    <h1>數學筆記庫</h1>
+    <ul>
+        <li>
+            <span class="note-title"><h3>小數乘除（2024.03.28）</h3></span>
+            <pre style="display: none;">
+和差積商餘
+小數加減法：對齊
+小數乘法：計算位數(原理：以10或10的次方為底的分數)
+小數除法：留意小數位置
+            </pre>
+        </li>
+
+        <li>
+            <span class="note-title"><h3>大單位（2024.04.02）</h3></span>
+            <pre style="display: none;">
+1公噸
+=1000公斤
+=1000000公克
+1公斤
+=1000公克
+1平方公里
+=100公頃(平方公引)
+=10000公畝(平方公丈)
+=1000000平方公尺
+1平方公尺
+=100平方公寸
+=10000平方公分
+=1000000平方公釐
+1甲
+=9,699.173平方公尺
+1坪
+=3.3058平方公尺
+長度：里引丈尺寸分厘
+重量：噸石衡斤兩錢克
+容積：秉擔斗升合杓撮
+1間教室約0.6~0.8a
+            </pre>
+        </li>
+
+        <!-- 其他筆記 -->
+    </ul>
+</div>
+
+
+<div class="content" id="CL">
+    <h1>程式語言庫</h1>
+    <ul>
+        <li>
+            <span class="note-title"><h3>HTML5（2024.04.01）</h3></span>
+            <pre style="display: none;">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;title&gt;&lt;/title&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;link rel="stylesheet" href=""&gt;
+&lt;script src=""&gt;&lt;/script&gt;
+&lt;style&gt;&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;header&gt;&lt;/header&gt;
+&lt;nav&gt;&lt;/nav&gt;
+&lt;main&gt;&lt;/main&gt;
+&lt;section&gt;&lt;/section&gt;
+&lt;article&gt;&lt;/article&gt;
+&lt;aside&gt;&lt;/aside&gt;
+&lt;footer&gt;&lt;/footer&gt;
+&lt;h1&gt; - &lt;h6&gt;
+&lt;p&gt;
+&lt;br&gt;
+&lt;hr&gt;
+&lt;strong&gt;
+&lt;em&gt;
+&lt;a href=""&gt;&lt;/a&gt;
+&lt;img src="" alt=""&gt;
+&lt;ul&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;th&gt;
+&lt;td&gt;
+&lt;form&gt;
+&lt;input type="text"&gt;
+&lt;textarea&gt;&lt;/textarea&gt;
+&lt;button&gt;&lt;/button&gt;
+&lt;select&gt;
+&lt;option&gt;&lt;/option&gt;
+&lt;/select&gt;
+&lt;label&gt;&lt;/label&gt;
+&lt;figure&gt;
+&lt;figcaption&gt;
+&lt;canvas&gt;&lt;/canvas&gt;
+&lt;video src=""&gt;&lt;/video&gt;
+&lt;audio src=""&gt;&lt;/audio&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;/summary&gt;
+&lt;/details&gt;
+&lt;datalist&gt;
+&lt;option&gt;&lt;/option&gt;
+&lt;/datalist&gt;
+&lt;output&gt;&lt;/output&gt;
+&lt;progress&gt;&lt;/progress&gt;
+&lt;meter&gt;&lt;/meter&gt;
+&lt;svg&gt;&lt;/svg&gt;
+&lt;iframe src=""&gt;&lt;/iframe&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+        </li>
+
+        <li>
+            <span class="note-title"><h3>CSS3（2024.04.02）</h3></span>
+            <pre style="display: none;">
+/* 基本選擇器 */
+element { }
+#id { }
+.class { }
+* { } /* 萬用選擇器 */
+
+/* 屬性選擇器 */
+[attr] { }
+[attr="value"] { }
+[attr^="value"] { } /* 屬性值以某字符串開頭 */
+[attr$="value"] { } /* 屬性值以某字符串結尾 */
+[attr*="value"] { } /* 屬性值包含某字符串 */
+
+/* 結構性偽類選擇器 */
+:first-child { }
+:last-child { }
+:nth-child(n) { }
+:nth-last-child(n) { }
+:nth-of-type(n) { }
+:first-of-type { }
+:last-of-type { }
+
+/* 目標、語言和否定偽類 */
+:target { }
+:lang(language) { }
+:not(selector) { }
+
+/* 動態偽類選擇器（用戶交互） */
+:hover { }
+:active { }
+:focus { }
+:visited { }
+
+/* 生成內容 */
+::before { content: ""; }
+::after { content: ""; }
+
+/* 背景和邊框 */
+background-image: url(image.png);
+background-size: cover; /* 或 contain */
+border-radius: 10px;
+box-shadow: 5px 5px 10px #888;
+
+/* 文本效果 */
+text-shadow: 2px 2px 2px #000;
+word-wrap: break-word;
+
+/* 2D/3D 轉換 */
+transform: rotate(30deg);
+transform: translate(50px, 100px);
+transform: scale(2, 3);
+
+/* 過渡 */
+transition: property duration timing-function delay;
+
+/* 動畫 */
+@keyframes animationname {
+  from { }
+  to { }
+}
+animation: name duration timing-function delay iteration-count direction;
+
+/* 彈性布局 */
+display: flex;
+justify-content: center; /* 或 space-between, space-around, flex-start, flex-end */
+align-items: center;
+
+/* 網格布局 */
+display: grid;
+grid-template-columns: 100px 1fr 2fr;
+grid-template-rows: auto;
+grid-gap: 10px;
+
+/* 多列布局 */
+column-count: 3;
+column-gap: 20px;
+
+/* 媒體查詢 */
+@media (max-width: 600px) {
+  /* CSS 規則 */
+}
+            </pre>
+        </li>
+        
+        <li>
+            <span class="note-title"><h3>JavaScript（2024.04.02）</h3></span>
+            <pre style="display: none;">
+// 變量宣告
+var name = "John";
+let age = 30;
+const PI = 3.14;
+
+// 數據類型
+let string = "Hello, world!";
+let number = 25;
+let boolean = true;
+let array = [1, 2, 3];
+let object = { key: "value" };
+let func = function() { return "Hello from function"; };
+
+// 條件語句
+if (age &gt; 18) {
+    console.log("Adult");
+} else {
+    console.log("Minor");
+}
+
+// 循環
+for (let i = 0; i &lt; 5; i++) {
+    console.log(i);
+}
+
+while (age &lt; 50) {
+    age++;
+}
+
+// 函數
+function greet(name) {
+    return "Hello " + name + "!";
+}
+
+// 箭頭函數
+const greetArrow = (name) => "Hello " + name + "!";
+
+// 對象
+let person = {
+    name: "John",
+    greet: function() {
+        console.log("Hello " + this.name);
+    }
+};
+
+// 事件處理
+document.getElementById("myButton").addEventListener("click", function() {
+    console.log("Button clicked!");
+});
+
+// 錯誤處理
+try {
+    // 可能出錯的代碼
+} catch (error) {
+    console.error(error);
+}
+
+// Promise 和異步
+let promise = new Promise(function(resolve, reject) {
+    // 長時間運行的非同步操作
+});
+
+async function fetchData() {
+    let data = await fetch('https://example.com&#39;);
+    return data;
+}
+            </pre>
+        </li>
+        
+                <li>
+            <span class="note-title"><h3>R語言（2024.04.02）</h3></span>
+            <pre style="display: none;">
+# 變量賦值
+x &lt;- 10
+y &lt;- 20
+name &lt;- "John"
+
+# 向量
+v &lt;- c(1, 2, 3, 4, 5)
+names(v) &lt;- c("a", "b", "c", "d", "e")
+
+# 條件語句
+if (x &gt; 5) {
+  print("x is greater than 5")
+} else {
+  print("x is less than or equal to 5")
+}
+
+# 循環
+for (i in 1:5) {
+  print(i)
+}
+
+# 函數定義
+add &lt;- function(a, b) {
+  return(a + b)
+}
+
+# 數據框
+df &lt;- data.frame(
+  Name = c("Alice", "Bob", "Charlie"),
+  Age = c(25, 30, 35),
+  Salary = c(50000, 60000, 70000)
+)
+
+# 數據框的操作
+summary(df)
+head(df)
+str(df)
+
+# 繪圖
+plot(v, type = "l") # 繪製線型圖
+hist(v) # 繪製直方圖
+
+# 安裝並加載外部包
+# install.packages("ggplot2")
+library(ggplot2)
+ggplot(data = df, aes(x = Name, y = Salary)) + geom_col()
+
+# 處理缺失值
+is.na(df)
+na.omit(df)
+
+# 日期和時間
+date() # 顯示當前日期
+Sys.time() # 顯示當前時間
+            </pre>
+        </li>
+        
+         <li>
+            <span class="note-title"><h3>C語言（2024.04.02）</h3></span>
+            <pre style="display: none;">
+#include &lt;stdio.h&gt;
+
+// 主函數
+int main() {
+    // 變量宣告
+    int a = 10;
+    float b = 20.5;
+    char c = 'A';
+
+    // 條件語句
+    if (a &gt; 5) {
+        printf("a is greater than 5\n");
+    } else {
+        printf("a is not greater than 5\n");
+    }
+
+    // 循環
+    for(int i = 0; i &lt; a; i++) {
+        printf("%d ", i);
+    }
+    printf("\n");
+
+    // while 循環
+    int count = 0;
+    while (count &lt; a) {
+        printf("%d ", count);
+        count++;
+    }
+    printf("\n");
+
+    // 函數調用
+    int result = add(a, b);
+    printf("Result: %d\n", result);
+
+    // 指針
+    int* ptr = &amp;a;
+    printf("Address of a: %p\n", (void*)ptr);
+    printf("Value of a through pointer: %d\n", *ptr);
+
+    return 0;
+}
+
+// 函數定義
+int add(int x, int y) {
+    return x + y;
+}
+            </pre>
+        </li>
+        
+        <li>
+            <span class="note-title"><h3>C#語言（2024.04.02）</h3></span>
+            <pre style="display: none;">
+using System;
+
+namespace HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // 變量宣告
+            int a = 10;
+            double b = 20.5;
+            string greeting = "Hello, World!";
+            
+            // 輸出到控制台
+            Console.WriteLine(greeting);
+            
+            // 條件語句
+            if (a &gt; 5)
+            {
+                Console.WriteLine("a is greater than 5");
+            }
+            else
+            {
+                Console.WriteLine("a is not greater than 5");
+            }
+            
+            // 循環
+            for(int i = 0; i &lt; 5; i++)
+            {
+                Console.WriteLine("i = " + i);
+            }
+            
+            // 方法調用
+            int sum = Add(a, a);
+            Console.WriteLine("Sum = " + sum);
+            
+            // 創建對象
+            MyClass obj = new MyClass();
+            obj.MyMethod();
+        }
+        
+        // 方法定義
+        static int Add(int x, int y)
+        {
+            return x + y;
+        }
+    }
+    
+    // 類別定義
+    class MyClass
+    {
+        public void MyMethod()
+        {
+            Console.WriteLine("In MyMethod of MyClass");
+        }
+    }
+    
+    // 繼承
+    class DerivedClass : MyClass
+    {
+        public void AnotherMethod()
+        {
+            Console.WriteLine("In AnotherMethod of DerivedClass");
+        }
+    }
+}
+            </pre>
+        </li>
+        
+        <li>
+            <span class="note-title"><h3>Python（2024.04.02）</h3></span>
+            <pre style="display: none;">
+# 變量賦值
+a = 10
+b = 20.5
+name = "Alice"
+
+# 列表
+my_list = [1, 2, 3, 4, 5]
+
+# 字典
+my_dict = {"name": "Alice", "age": 25}
+
+# 條件語句
+if a &gt; 5:
+    print("a is greater than 5")
+else:
+    print("a is less than or equal to 5")
+
+# 循環
+for i in range(5):
+    print(i)
+
+# while 循環
+count = 0
+while count &lt; 5:
+    print(count)
+    count += 1
+
+# 函數定義
+def greet(name):
+    return "Hello " + name + "!"
+
+# 類別定義
+class MyClass:
+    def __init__(self, name):
+        self.name = name
+
+    def say_hello(self):
+        print("Hello " + self.name + "!")
+
+# 繼承
+class DerivedClass(MyClass):
+    def say_goodbye(self):
+        print("Goodbye " + self.name + "!")
+
+# 實例化對象
+obj = MyClass("Alice")
+obj.say_hello()
+
+# 列表推導式
+squares = [x**2 for x in range(10)]
+
+# 字典推導式
+square_dict = {x: x**2 for x in range(5)}
+
+# 使用模塊
+import math
+result = math.sqrt(25)
+            </pre>
+        </li>
+        
+        <!-- 其他筆記 -->
+    </ul>
+</div>
+
+<!-- 可以根據需要添加更多分類 -->
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const words = document.querySelectorAll('ul li');
+
+        words.forEach(word => {
+            word.addEventListener('click', function() {
+                let definition = this.querySelector('.definition');
+                definition.classList.toggle('show');
+            });
+        });
+    });
+
+// 當用戶滾動頁面時，根據滾動的距離顯示或隱藏按鈕
+window.onscroll = function() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("backToTop").style.display = "block";
+    } else {
+        document.getElementById("backToTop").style.display = "none";
+    }
+};
+
+// 當用戶點擊按鈕時，平滑滾動回頁面頂部
+document.getElementById('backToTop').addEventListener('click', function() {
+    document.body.scrollTop = 0; // 適用於 Safari
+    document.documentElement.scrollTop = 0; // 適用於 Chrome, Firefox, IE 和 Opera
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const noteTitles = document.querySelectorAll('.note-title');
+
+    noteTitles.forEach(title => {
+        title.addEventListener('click', function() {
+            let preContent = this.nextElementSibling;
+            // 切換 <pre> 內容的顯示狀態
+            preContent.style.display = preContent.style.display === 'none' ? 'block' : 'none';
+            // 根據 <pre> 內容的顯示狀態切換 'expanded' 類別
+            if (preContent.style.display === 'block') {
+                preContent.classList.add('expanded');
+            } else {
+                preContent.classList.remove('expanded');
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>
